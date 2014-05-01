@@ -1,0 +1,48 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+enum {{ class }}: string
+{
+    case Example = 'example';
+
+    /**
+     * Return all case values.
+     *
+     * @return list<string>
+     */
+    public static function values(): array
+    {
+        return array_column(self::cases(), 'value');
+    }
+
+    /**
+     * Return an associative array of value => label pairs.
+     *
+     * @return array<string, string>
+     */
+    public static function labels(): array
+    {
+        return array_reduce(self::cases(), function (array $carry, self $case): array {
+            $carry[$case->value] = ucwords(str_replace(['_', '-'], ' ', $case->value));
+
+            return $carry;
+        }, []);
+    }
+
+    /**
+     * Get a case by its name (case-insensitive).
+     */
+    public static function fromName(string $name): self
+    {
+        foreach (self::cases() as $case) {
+            if (strtolower($case->name) === strtolower($name)) {
+                return $case;
+            }
+        }
+
+        throw new \ValueError('"' . $name . '" is not a valid name for enum "' . self::class . '"');
+    }
+}

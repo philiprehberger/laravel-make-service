@@ -1,0 +1,48 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use {{ sourceClass }};
+use PHPUnit\Framework\TestCase;
+
+class {{ class }} extends TestCase
+{
+    public function test_values_returns_array(): void
+    {
+        $values = {{ sourceClassName }}::values();
+
+        $this->assertIsArray($values);
+        $this->assertNotEmpty($values);
+    }
+
+    public function test_labels_returns_associative_array(): void
+    {
+        $labels = {{ sourceClassName }}::labels();
+
+        $this->assertIsArray($labels);
+        $this->assertNotEmpty($labels);
+    }
+
+    public function test_from_name_returns_correct_case(): void
+    {
+        $cases = {{ sourceClassName }}::cases();
+
+        if (empty($cases)) {
+            $this->markTestSkipped('No cases defined on this enum.');
+        }
+
+        $first = $cases[0];
+        $result = {{ sourceClassName }}::fromName($first->name);
+
+        $this->assertSame($first, $result);
+    }
+
+    public function test_from_name_throws_for_invalid_name(): void
+    {
+        $this->expectException(\ValueError::class);
+
+        {{ sourceClassName }}::fromName('__invalid__name__that__does__not__exist__');
+    }
+}
