@@ -1,10 +1,8 @@
 # Laravel Make Service
 
 [![Tests](https://github.com/philiprehberger/laravel-make-service/actions/workflows/tests.yml/badge.svg)](https://github.com/philiprehberger/laravel-make-service/actions/workflows/tests.yml)
-[![Latest Stable Version](https://img.shields.io/packagist/v/philiprehberger/laravel-make-service.svg)](https://packagist.org/packages/philiprehberger/laravel-make-service)
-[![Total Downloads](https://img.shields.io/packagist/dt/philiprehberger/laravel-make-service.svg)](https://packagist.org/packages/philiprehberger/laravel-make-service)
-[![License](https://img.shields.io/packagist/l/philiprehberger/laravel-make-service.svg)](https://packagist.org/packages/philiprehberger/laravel-make-service)
-[![PHP Version](https://img.shields.io/packagist/php-v/philiprehberger/laravel-make-service.svg)](https://packagist.org/packages/philiprehberger/laravel-make-service)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/philiprehberger/laravel-make-service.svg)](https://packagist.org/packages/philiprehberger/laravel-make-service)
+[![License](https://img.shields.io/github/license/philiprehberger/laravel-make-service)](LICENSE)
 
 Artisan generator commands for services, DTOs, enums, actions, value objects, and interfaces — the missing `make:*` commands for well-structured Laravel applications.
 
@@ -396,6 +394,19 @@ Available stubs:
 | `stubs/make-service/value.test.stub` | `--test` on `make:value` |
 | `stubs/make-service/contract.test.stub` | `--test` on `make:contract` |
 
+## API
+
+| Command | Output location | Description |
+|---------|----------------|-------------|
+| `php artisan make:service {Name}` | `app/Services/` | Service class |
+| `php artisan make:dto {Name}` | `app/DTOs/` | Readonly DTO |
+| `php artisan make:enum {Name}` | `app/Enums/` | String-backed enum with helpers |
+| `php artisan make:action {Name}` | `app/Actions/` | Invokable action class |
+| `php artisan make:value {Name}` | `app/ValueObjects/` | Readonly value object |
+| `php artisan make:contract {Name}` | `app/Contracts/` | PHP interface |
+
+All commands accept `--test` / `-t` (generate a test file) and `--force` / `-f` (overwrite existing).
+
 ## Development
 
 ```bash
@@ -407,4 +418,4 @@ vendor/bin/phpstan analyse
 
 ## License
 
-The MIT License (MIT). See the [LICENSE](LICENSE) file for details.
+MIT
