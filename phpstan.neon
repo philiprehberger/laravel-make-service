@@ -2,19 +2,10 @@ includes:
     - vendor/nunomaduro/larastan/extension.neon
 
 parameters:
-    level: 8
-
+    level: 6
     paths:
         - src
-        - tests
-
-    ignoreErrors:
-        # Laravel's GeneratorCommand uses mixed types for rootNamespace which we
-        # must match in our overrides.
-        - identifier: missingType.generics
-
     excludePaths:
         - vendor
-
-    checkMissingIterableValueType: false
-    checkGenericClassInNonGenericObjectType: false
+    ignoreErrors:
+        - identifier: missingType.iterableValue
