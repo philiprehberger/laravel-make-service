@@ -1,0 +1,33 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use {{ sourceClass }};
+use PHPUnit\Framework\TestCase;
+
+class {{ class }} extends TestCase
+{
+    public function test_it_can_be_instantiated(): void
+    {
+        $value = new {{ sourceClassName }}();
+
+        $this->assertInstanceOf({{ sourceClassName }}::class, $value);
+    }
+
+    public function test_it_is_readonly(): void
+    {
+        $reflection = new \ReflectionClass({{ sourceClassName }}::class);
+
+        $this->assertTrue($reflection->isReadOnly());
+    }
+
+    public function test_equals_returns_true_for_identical_instances(): void
+    {
+        $a = new {{ sourceClassName }}();
+        $b = new {{ sourceClassName }}();
+
+        $this->assertTrue($a->equals($b));
+    }
+}

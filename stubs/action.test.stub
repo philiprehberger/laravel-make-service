@@ -1,0 +1,37 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use {{ sourceClass }};
+use PHPUnit\Framework\TestCase;
+
+class {{ class }} extends TestCase
+{
+    private {{ sourceClassName }} $action;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->action = new {{ sourceClassName }}();
+    }
+
+    public function test_it_can_be_instantiated(): void
+    {
+        $this->assertInstanceOf({{ sourceClassName }}::class, $this->action);
+    }
+
+    public function test_it_is_invokable(): void
+    {
+        $this->assertTrue(is_callable($this->action));
+    }
+
+    public function test_invoke_delegates_to_execute(): void
+    {
+        $result = ($this->action)();
+
+        $this->assertNull($result);
+    }
+}

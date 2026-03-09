@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+readonly class {{ class }}
+{
+    public function __construct(
+        //
+    ) {}
+
+    /**
+     * Determine if this value object equals another.
+     */
+    public function equals(self $other): bool
+    {
+        return $this == $other;
+    }
+}

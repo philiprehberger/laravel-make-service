@@ -1,0 +1,60 @@
+{
+    "name": "philiprehberger/laravel-make-service",
+    "description": "Artisan generator commands for services, DTOs, enums, actions, value objects, and interfaces.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "artisan",
+        "generator",
+        "service",
+        "dto",
+        "enum",
+        "action",
+        "value-object",
+        "interface",
+        "make"
+    ],
+    "authors": [
+        {
+            "name": "Philip Rehberger",
+            "email": "philip@rehberger.io"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/console": "^11.0|^12.0",
+        "illuminate/filesystem": "^11.0|^12.0",
+        "illuminate/support": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "laravel/framework": "^11.0|^12.0",
+        "orchestra/testbench": "^9.0|^10.0",
+        "phpunit/phpunit": "^10.5|^11.0",
+        "laravel/pint": "^1.18",
+        "phpstan/phpstan": "^1.12",
+        "nunomaduro/larastan": "^2.9|^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhilipRehberger\\MakeService\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhilipRehberger\\MakeService\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PhilipRehberger\\MakeService\\MakeServiceServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

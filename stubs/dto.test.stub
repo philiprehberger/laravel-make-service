@@ -1,0 +1,25 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use {{ sourceClass }};
+use PHPUnit\Framework\TestCase;
+
+class {{ class }} extends TestCase
+{
+    public function test_it_can_be_instantiated(): void
+    {
+        $dto = new {{ sourceClassName }}();
+
+        $this->assertInstanceOf({{ sourceClassName }}::class, $dto);
+    }
+
+    public function test_it_is_readonly(): void
+    {
+        $reflection = new \ReflectionClass({{ sourceClassName }}::class);
+
+        $this->assertTrue($reflection->isReadOnly());
+    }
+}
