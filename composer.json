@@ -15,6 +15,7 @@
         "interface",
         "make"
     ],
+    "homepage": "https://github.com/philiprehberger/laravel-make-service",
     "authors": [
         {
             "name": "Philip Rehberger",
@@ -58,6 +59,11 @@
         "allow-plugins": {
             "phpstan/extension-installer": true
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "lint": "vendor/bin/pint",
+        "analyse": "vendor/bin/phpstan analyse"
     },
     "minimum-stability": "stable",
     "prefer-stable": true

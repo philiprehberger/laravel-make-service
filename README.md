@@ -396,6 +396,15 @@ Available stubs:
 | `stubs/make-service/value.test.stub` | `--test` on `make:value` |
 | `stubs/make-service/contract.test.stub` | `--test` on `make:contract` |
 
+## Development
+
+```bash
+composer install
+vendor/bin/phpunit
+vendor/bin/pint --test
+vendor/bin/phpstan analyse
+```
+
 ## License
 
 The MIT License (MIT). See the [LICENSE](LICENSE) file for details.
