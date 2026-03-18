@@ -4,7 +4,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/philiprehberger/laravel-make-service.svg)](https://packagist.org/packages/philiprehberger/laravel-make-service)
 [![License](https://img.shields.io/github/license/philiprehberger/laravel-make-service)](LICENSE)
 
-Artisan generator commands for services, DTOs, enums, actions, value objects, and interfaces — the missing `make:*` commands for well-structured Laravel applications.
+Artisan generator commands for services, DTOs, enums, actions, value objects, and interfaces.
 
 ## Requirements
 
