@@ -8,8 +8,8 @@ Artisan generator commands for services, DTOs, enums, actions, value objects, an
 
 ## Requirements
 
-- PHP ^8.2
-- Laravel ^11.0 | ^12.0
+- PHP 8.2+
+- Laravel 11 or 12
 
 ## Installation
 
@@ -29,7 +29,7 @@ php artisan vendor:publish --tag=make-service-stubs
 
 Stubs are published to `stubs/make-service/` in your application root. Once published, the commands use your local stubs instead of the package defaults.
 
-## Commands
+## Usage
 
 All commands support the following shared flags:
 
@@ -371,7 +371,7 @@ Generates both `app/Contracts/PaymentGateway.php` and `tests/Unit/Contracts/Paym
 
 ---
 
-## Customizing Stubs
+### Customizing Stubs
 
 After publishing stubs with `php artisan vendor:publish --tag=make-service-stubs`, edit any file in `stubs/make-service/`. The commands always prefer your published stubs over the package defaults.
 
