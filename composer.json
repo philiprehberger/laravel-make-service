@@ -1,6 +1,6 @@
 {
     "name": "philiprehberger/laravel-make-service",
-    "description": "Artisan generator commands for services, DTOs, enums, actions, value objects, and interfaces.",
+    "description": "Artisan generator commands for services, DTOs, enums, actions, value objects, and interfaces",
     "type": "library",
     "license": "MIT",
     "keywords": [

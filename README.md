@@ -8,8 +8,8 @@ Artisan generator commands for services, DTOs, enums, actions, value objects, an
 
 ## Requirements
 
-- PHP ^8.2
-- Laravel ^11.0 | ^12.0
+- PHP 8.2+
+- Laravel 11 or 12
 
 ## Installation
 
@@ -29,7 +29,7 @@ php artisan vendor:publish --tag=make-service-stubs
 
 Stubs are published to `stubs/make-service/` in your application root. Once published, the commands use your local stubs instead of the package defaults.
 
-## Commands
+## Usage
 
 All commands support the following shared flags:
 
@@ -38,7 +38,6 @@ All commands support the following shared flags:
 | `--test` / `-t` | Also generate a PHPUnit test file in `tests/Unit/` |
 | `--force` / `-f` | Overwrite the file if it already exists |
 
----
 
 ### `make:service`
 
@@ -109,7 +108,6 @@ php artisan make:service Auth/LoginService
 
 Generates `app/Services/Auth/LoginService.php` with namespace `App\Services\Auth`.
 
----
 
 ### `make:dto`
 
@@ -157,7 +155,6 @@ php artisan make:dto CreateUserDto --test
 
 Generates both `app/DTOs/CreateUserDto.php` and `tests/Unit/DTOs/CreateUserDtoTest.php`. The test asserts that the class is readonly and can be instantiated.
 
----
 
 ### `make:enum`
 
@@ -221,7 +218,6 @@ php artisan make:enum OrderStatus --test
 
 Generates both `app/Enums/OrderStatus.php` and `tests/Unit/Enums/OrderStatusTest.php`. The test covers `values()`, `labels()`, `fromName()`, and the invalid-name exception.
 
----
 
 ### `make:action`
 
@@ -273,7 +269,6 @@ php artisan make:action CreateInvoiceAction --test
 
 Generates both `app/Actions/CreateInvoiceAction.php` and `tests/Unit/Actions/CreateInvoiceActionTest.php`. The test asserts invocability and that `__invoke` delegates to `execute`.
 
----
 
 ### `make:value`
 
@@ -330,7 +325,6 @@ php artisan make:value Money --test
 
 Generates both `app/ValueObjects/Money.php` and `tests/Unit/ValueObjects/MoneyTest.php`. The test asserts the class is readonly and that `equals()` returns `true` for identical instances.
 
----
 
 ### `make:contract`
 
@@ -369,9 +363,8 @@ php artisan make:contract PaymentGateway --test
 
 Generates both `app/Contracts/PaymentGateway.php` and `tests/Unit/Contracts/PaymentGatewayTest.php`. The test asserts the generated file is a proper PHP interface.
 
----
 
-## Customizing Stubs
+### Customizing Stubs
 
 After publishing stubs with `php artisan vendor:publish --tag=make-service-stubs`, edit any file in `stubs/make-service/`. The commands always prefer your published stubs over the package defaults.
 
