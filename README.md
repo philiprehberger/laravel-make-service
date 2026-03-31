@@ -2,8 +2,7 @@
 
 [![Tests](https://github.com/philiprehberger/laravel-make-service/actions/workflows/tests.yml/badge.svg)](https://github.com/philiprehberger/laravel-make-service/actions/workflows/tests.yml)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/philiprehberger/laravel-make-service.svg)](https://packagist.org/packages/philiprehberger/laravel-make-service)
-[![License](https://img.shields.io/github/license/philiprehberger/laravel-make-service)](LICENSE)
-[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
+[![Last updated](https://img.shields.io/github/last-commit/philiprehberger/laravel-make-service)](https://github.com/philiprehberger/laravel-make-service/commits/main)
 
 Artisan generator commands for services, DTOs, enums, actions, value objects, and interfaces.
 
@@ -38,7 +37,6 @@ All commands support the following shared flags:
 |------|-------------|
 | `--test` / `-t` | Also generate a PHPUnit test file in `tests/Unit/` |
 | `--force` / `-f` | Overwrite the file if it already exists |
-
 
 ### `make:service`
 
@@ -109,7 +107,6 @@ php artisan make:service Auth/LoginService
 
 Generates `app/Services/Auth/LoginService.php` with namespace `App\Services\Auth`.
 
-
 ### `make:dto`
 
 Generates a readonly Data Transfer Object in `app/DTOs/`.
@@ -155,7 +152,6 @@ php artisan make:dto CreateUserDto --test
 ```
 
 Generates both `app/DTOs/CreateUserDto.php` and `tests/Unit/DTOs/CreateUserDtoTest.php`. The test asserts that the class is readonly and can be instantiated.
-
 
 ### `make:enum`
 
@@ -219,7 +215,6 @@ php artisan make:enum OrderStatus --test
 
 Generates both `app/Enums/OrderStatus.php` and `tests/Unit/Enums/OrderStatusTest.php`. The test covers `values()`, `labels()`, `fromName()`, and the invalid-name exception.
 
-
 ### `make:action`
 
 Generates a single-action invokable class in `app/Actions/`. The `__invoke()` method delegates to `execute()`, allowing both direct invocation and explicit calling.
@@ -269,7 +264,6 @@ php artisan make:action CreateInvoiceAction --test
 ```
 
 Generates both `app/Actions/CreateInvoiceAction.php` and `tests/Unit/Actions/CreateInvoiceActionTest.php`. The test asserts invocability and that `__invoke` delegates to `execute`.
-
 
 ### `make:value`
 
@@ -326,7 +320,6 @@ php artisan make:value Money --test
 
 Generates both `app/ValueObjects/Money.php` and `tests/Unit/ValueObjects/MoneyTest.php`. The test asserts the class is readonly and that `equals()` returns `true` for identical instances.
 
-
 ### `make:contract`
 
 Generates a PHP interface in `app/Contracts/`.
@@ -363,7 +356,6 @@ php artisan make:contract PaymentGateway --test
 ```
 
 Generates both `app/Contracts/PaymentGateway.php` and `tests/Unit/Contracts/PaymentGatewayTest.php`. The test asserts the generated file is a proper PHP interface.
-
 
 ### Customizing Stubs
 
@@ -410,6 +402,24 @@ vendor/bin/pint --test
 vendor/bin/phpstan analyse
 ```
 
+## Support
+
+If you find this project useful:
+
+⭐ [Star the repo](https://github.com/philiprehberger/laravel-make-service)
+
+🐛 [Report issues](https://github.com/philiprehberger/laravel-make-service/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+💡 [Suggest features](https://github.com/philiprehberger/laravel-make-service/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+
+❤️ [Sponsor development](https://github.com/sponsors/philiprehberger)
+
+🌐 [All Open Source Projects](https://philiprehberger.com/open-source-packages)
+
+💻 [GitHub Profile](https://github.com/philiprehberger)
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/philiprehberger)
+
 ## License
 
-MIT
+[MIT](LICENSE)
